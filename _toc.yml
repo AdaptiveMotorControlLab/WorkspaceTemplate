@@ -1,6 +1,5 @@
 format: jb-book
-root: docs/StyleGuide 
-logo: docs/logo.png
+root: docs/StyleGuide
 parts:
 - caption: Main Documentation
   chapters:
