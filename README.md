@@ -57,6 +57,7 @@ project_name/
 
    * Formatted code makes your life and those who use/review your code easier. Standardized formatting with tools like `black` and `isort` (see the provided `.pre-commit-config.yaml`).
    * [Pre-commit hooks](https://pre-commit.com/) to automate checks before pushing code! Follow their quick Guide to do this, but in short:
+   
    (1) install it in your dev env
    ```python
       pip install pre-commit
