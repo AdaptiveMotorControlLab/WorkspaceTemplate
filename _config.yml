@@ -20,9 +20,9 @@ html:
     <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
 
 repository:
-  url: https://github.com/SCENE-Collaboration/Code_and_Documentation_Guidelines #change me
+  url: https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate #change me
   path_to_book: docs
   branch: main
 
 launch_buttons:
-  colab_url: "https://colab.research.google.com/github/SCENE-Collaboration/Code_and_Documentation_Guidelines/examples/yourdemo.ipynb"
+  colab_url: "https://colab.research.google.com/github.com/AdaptiveMotorControlLab/WorkspaceTemplate/examples/yourdemo.ipynb"
