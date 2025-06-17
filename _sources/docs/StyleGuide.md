@@ -5,7 +5,7 @@
 
 Please see our overall guide on code & project formatting [here](https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate/blob/main/README.md).
 
-### Main Principles 🔨 Organize your code & data : 
+### Main Principles 🔨 Organize your code & data: 
 - For experimental and ML projects, please use [DataJoint/databases](https://www.datajoint.com/)
 - Be sure you work under a lab repo, typically called "https://github.com/AdaptiveMotorControlLab/YourName_workspace".
 - For larger projects (DLC, CEBRA, ExperimentalPipelines, you should be sure your "final" work gets into a pipeline; talk to Mackenzie about this)

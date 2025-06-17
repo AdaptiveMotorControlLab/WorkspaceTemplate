@@ -147,8 +147,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="DocTemplate - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="DocTemplate - Home"/>`);</script>
   
-    <p class="title logo__title">DocTemplate</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -230,7 +236,7 @@
       
       
       
-      <li><a href="https://github.com/SCENE-Collaboration/Code_and_Documentation_Guidelines" target="_blank"
+      <li><a href="https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +253,7 @@
       
       
       
-      <li><a href="https://github.com/SCENE-Collaboration/Code_and_Documentation_Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/HowTo_JupyterBook.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate/issues/new?title=Issue%20on%20page%20%2Fdocs/HowTo_JupyterBook.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,10 +377,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-the-template-provided">Build from the template provided</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-build-from-the-template-provided-in-this-repo">OR Build from the template provided in this Repo!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment:</a></li>
 </ul>
             </nav>
         </div>
@@ -388,7 +393,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="what-is-jupyterbook">
 <h1>What is Jupyterbook?<a class="headerlink" href="#what-is-jupyterbook" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">https://jupyterbook.org/en/stable/intro.html</a></p>
+<p>We use JupyterBook for documentation and sharing computational notebooks. <a class="reference external" href="https://www.nature.com/articles/d41586-018-07196-1">Here</a> is a nice article for motivation.</p>
+<p>📑 The documentation: <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">https://jupyterbook.org/en/stable/intro.html</a></p>
 <section id="quick-start">
 <h2>Quick start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -397,8 +403,9 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">create</span> <span class="o">--</span><span class="n">cookiecutter</span> <span class="n">YourClonedRepo</span><span class="o">/</span>
 </pre></div>
 </div>
-<section id="build-from-the-template-provided">
-<h3>Build from the template provided<a class="headerlink" href="#build-from-the-template-provided" title="Link to this heading">#</a></h3>
+</section>
+<section id="or-build-from-the-template-provided-in-this-repo">
+<h2>OR Build from the template provided in this Repo!<a class="headerlink" href="#or-build-from-the-template-provided-in-this-repo" title="Link to this heading">#</a></h2>
 <p>(1) Use and adapt the two template files (_toc.yml, _config.yml) to your main code base, and be sure to keep the <code class="docutils literal notranslate"><span class="pre">docs</span></code> structure, i.e.,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/docs
 ├── /images
@@ -413,13 +420,16 @@ document.write(`
 </ul>
 <p>(3) to build your docs &amp; hosting see here: <a class="reference external" href="https://jupyterbook.org/en/stable/publish/gh-pages.html">https://jupyterbook.org/en/stable/publish/gh-pages.html</a></p>
 <p>TL;DR in the main repo run:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">❯</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span>
 </pre></div>
 </div>
 <p>and then follow terminal prompt (check errors, etc)- viola!</p>
-<p>To then deploy the book live, see: <a class="reference external" href="https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions">https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions</a></p>
-<p>In short, you will set up a git action to deploy to a new branch (that you never merge) called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code></p>
 </section>
+<section id="deployment">
+<h2>Deployment:<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<p>To then deploy the book live, see: <a class="reference external" href="https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions">https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions</a></p>
+<p>In short, Go to Settings &gt; Pages and set up anaction to deploy to a new branch (that you never merge) called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>:</p>
+<p><img alt="Screen Shot 2025-06-17 at 2 20 19 PM" src="https://github.com/user-attachments/assets/17d13802-6543-4859-ac09-7abbd491277d" /></p>
 </section>
 </section>
 
@@ -478,10 +488,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-from-the-template-provided">Build from the template provided</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-build-from-the-template-provided-in-this-repo">OR Build from the template provided in this Repo!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment:</a></li>
 </ul>
   </nav></div>
 
