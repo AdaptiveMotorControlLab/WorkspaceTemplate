@@ -4,5 +4,7 @@ parts:
 - caption: Main Documentation
   chapters:
   - file: README
+  - file: DEV_GUIDE
+  - file: docs/Learning_resources
   - file: docs/HowTo_JupyterBook
-  - file: docs/Learning_reseources
+  
