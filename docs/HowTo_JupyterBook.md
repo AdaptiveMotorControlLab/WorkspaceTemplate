@@ -1,6 +1,8 @@
 # What is Jupyterbook?
 
-https://jupyterbook.org/en/stable/intro.html
+We use JupyterBook for documentation and sharing computational notebooks. [Here](https://www.nature.com/articles/d41586-018-07196-1) is a nice article for motivation.
+
+📑 The documentation: https://jupyterbook.org/en/stable/intro.html
 
 
 ## Quick start
@@ -9,7 +11,7 @@ https://jupyterbook.org/en/stable/intro.html
 jupyter-book create --cookiecutter YourClonedRepo/
 ```
 
-### Build from the template provided
+## OR Build from the template provided in this Repo!
 
 (1) Use and adapt the two template files (_toc.yml, _config.yml) to your main code base, and be sure to keep the `docs` structure, i.e.,
 ```
@@ -26,11 +28,17 @@ jupyter-book create --cookiecutter YourClonedRepo/
 
 TL;DR in the main repo run:
 ```python
-❯ jupyter-book build .
+jupyter-book build .
 ```
 and then follow terminal prompt (check errors, etc)- viola!
 
 
+## Deployment:
+
 To then deploy the book live, see: https://jupyterbook.org/en/stable/publish/gh-pages.html#automatically-host-your-book-with-github-actions
 
-In short, you will set up a git action to deploy to a new branch (that you never merge) called `gh-pages`
+In short, Go to Settings > Pages and set up anaction to deploy to a new branch (that you never merge) called `gh-pages`:
+
+![Screen Shot 2025-06-17 at 2 20 19 PM](https://github.com/user-attachments/assets/17d13802-6543-4859-ac09-7abbd491277d)
+
+
