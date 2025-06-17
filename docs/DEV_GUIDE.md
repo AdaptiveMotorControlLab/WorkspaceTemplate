@@ -106,9 +106,9 @@ I recommend the following system for within-lab projects that have different lev
    - Review the current issues, PRs, and major milestones.
    - Self-assessment: are you blocking anyone? If so, work to fix that.
    - No one person is the gate-keeper for the project: work together
-2. **Get a review assigment system in place**
+2. **Get a review assignment system in place**
    - 🟥 Make a flag for **major dev/changes**: all users of the code should agree and sign off (git reviews), and this includes the PI.
-   - 🟧 Make a flag for **user-needs**: this is needed to stop a block -- it might not be perfect, so make an issue to revist later. 1 sign off from another user, and go! 🚀 
+   - 🟧 Make a flag for **user-needs**: this is needed to stop a block -- it might not be perfect, so make an issue to revisit later. 1 sign off from another user, and go! 🚀 
    - 🟩 Make a flag for **minor change**: not breaking, can be changed later, 1 sign off okay
 
 ### Git Workflow
@@ -229,8 +229,8 @@ We use the Google Style Guide: https://google.github.io/styleguide/
    - Group related functionality
    - Keep files focused and manageable
    - Follow the project's file structure
-   - RECOMENDED: Maximum file length: 1000 lines
-   - RECOMENDED: Maximum function length: 50 lines
+   - RECOMMENDED: Maximum file length: 1000 lines
+   - RECOMMENDED: Maximum function length: 50 lines
 
 
 ### Automated Formatting
