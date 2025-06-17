@@ -1,0 +1,41 @@
+# Introduction
+
+This is the intro to the JupyterBook!
+
+This is just a placeholder for you to document your package.
+
+
+## Developer Guide
+
+### 0. Edit your `config` and `toc` to your specs.
+
+### 1. Set Organization-level Permissions (already done for SCENE)
+Go to:
+`Org Settings` → `Actions` → `General` → `Select the repo` → Check:
+
+"Allow GitHub Actions to access the GITHUB_TOKEN with write permissions" must be enabled.
+
+"Workflow permissions" must allow read and write by default, or per repo.
+
+
+
+### 2. Deploy the Docs
+
+First, this is done via the GitHub actions `publish-book.yml`.
+
+To get a public `github.io` link, you must enable GitHub Pages.
+Note, this only works for public repos, or if private, from paid org.
+
+### Steps:
+
+1. Go to your repo → **Settings** → **Pages**
+2. Under **"Source"**, select:
+
+   * **Branch**: e.g., `main`
+   * **Folder**: `/_build/html`
+3. Click **"Save"**
+
+GitHub will deploy your book and show a link like:
+`https://<username>.github.io/<repo>/`
+
+Deployment may take a minute. Refresh the page to see the live link!

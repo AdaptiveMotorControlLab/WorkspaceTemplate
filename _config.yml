@@ -1,0 +1,28 @@
+title: DocTemplate
+author: MWM
+logo: docs/logo.png
+only_build_toc_files: true
+
+sphinx:
+  config:
+    autodoc_mock_imports: list #["wx"]
+  extra_extensions:
+    - numpydoc
+
+execute:
+  execute_notebooks: "off"
+
+html:
+  extra_navbar: ""
+  use_issues_button: true
+  use_repository_button: true
+  extra_footer: |
+    <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+
+repository:
+  url: https://github.com/SCENE-Collaboration/Code_and_Documentation_Guidelines #change me
+  path_to_book: docs
+  branch: main
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com/github/SCENE-Collaboration/Code_and_Documentation_Guidelines/examples/yourdemo.ipynb"
