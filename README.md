@@ -1,7 +1,7 @@
 
-# Code Guidelines
+# Code & Data Guidelines
 
-The hub for discussions and best practices on code management! The goal is someone can fork/clone this repo and start a new project easily. This was written by Mackenzie Mathis, and I thank my lab and the open-source community for many lessons learned.
+The is a hub for discussions and best practices on code management! The goal is someone can fork/clone this [template repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) and start a new project easily. This was written by Mackenzie Mathis, and I thank my lab and the open-source community for many lessons learned.
 
 ## Overview
 
@@ -84,6 +84,12 @@ project_name/
 
    * [DataJoint](https://www.datajoint.com/) examples for managing and querying scientific data pipelines - these are a must; use minimally for data + meta data storage, and use it to automate things you do daily (preprocessing, running DeepLabCut, etc!)
    * [Templates for common workflows and schema management are here!](https://docs.datajoint.com/elements/)
+  
+
+7. **Style Guide for overall code & project management**
+
+   * Tips and practices for code, manuscripts, and figures.
+   
 
 ---
 
