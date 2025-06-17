@@ -96,6 +96,6 @@ ax.xaxis.label.set_color("white")
 
 For conference submissions, all papers must be in final form 1 week prior to the deadline. 
 There will be no exceptions going forward. 
-This gives us needed time to reflect, refine writing, get some distance, and ask colleagues for feeback. 
+This gives us needed time to reflect, refine writing, get some distance, and ask colleagues for feedback. 
 It also gives us time to prepare the code submission, and potentially arXiv the work -- which is always preferred. 
 We should not be submitting manuscripts to conferences we would not want publicly read! 
