@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Development Guide &#8212; DocTemplate</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/DEV_GUIDE';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Learning Resources" href="Learning_resources.html" />
+    <link rel="prev" title="Code &amp; Data Guidelines" href="../README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="StyleGuide.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="DocTemplate - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="DocTemplate - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="StyleGuide.html">
+                    Style Guide for Projects in the MLAI
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Main Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Code &amp; Data Guidelines</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning_resources.html">Learning Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HowTo_JupyterBook.html">What is Jupyterbook?</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate/issues/new?title=Issue%20on%20page%20%2Fdocs/DEV_GUIDE.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/DEV_GUIDE.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Development Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review-best-practices">Code Review Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-reviewers">For Reviewers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-authors">For Authors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issue-management">Issue Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-issues">Creating Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-issues">Managing Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborative-coding-guidelines">Collaborative Coding Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-developing">Who is developing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting">Code Formatting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formatting-rules">General Formatting Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-formatting">Automated Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-style-guide-compliance">Google Style Guide Compliance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="development-guide">
+<h1>Development Guide<a class="headerlink" href="#development-guide" title="Link to this heading">#</a></h1>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#code-review-best-practices"><span class="xref myst">Code Review Best Practices</span></a></p></li>
+<li><p><a class="reference internal" href="#issue-management"><span class="xref myst">Issue Management</span></a></p></li>
+<li><p><a class="reference internal" href="#collaborative-coding-guidelines"><span class="xref myst">Collaborative Coding Guidelines</span></a></p></li>
+<li><p><a class="reference internal" href="#code-formatting"><span class="xref myst">Code Formatting</span></a></p></li>
+</ul>
+</section>
+<section id="code-review-best-practices">
+<h2>Code Review Best Practices<a class="headerlink" href="#code-review-best-practices" title="Link to this heading">#</a></h2>
+<section id="for-reviewers">
+<h3>For Reviewers<a class="headerlink" href="#for-reviewers" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Be Constructive and Respectful</strong></p>
+<ul class="simple">
+<li><p>Focus on the code, not the person 🔐</p></li>
+<li><p>Provide clear, actionable feedback 🚧</p></li>
+<li><p>Explain the “why” behind your suggestions</p></li>
+<li><p>Use a positive and encouraging tone 💜</p></li>
+</ul>
+</li>
+<li><p><strong>Review Checklist</strong></p>
+<ul class="simple">
+<li><p>Code follows <a class="reference external" href="https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate/blob/mwm/dev-guide/docs/StyleGuide.md">project style guidelines</a></p></li>
+<li><p>No obvious bugs or security issues</p></li>
+<li><p><strong>Tests</strong> are included and pass</p></li>
+<li><p>Documentation is updated</p></li>
+<li><p>Performance considerations are addressed</p></li>
+<li><p>Error handling is appropriate</p></li>
+</ul>
+</li>
+<li><p><strong>Timely Reviews</strong></p>
+<ul class="simple">
+<li><p>Respond to review requests within 24 hours</p></li>
+<li><p>If you can’t review immediately, communicate your timeline</p></li>
+<li><p>Don’t let PRs sit idle for extended periods</p></li>
+</ul>
+</li>
+<li><p><strong>Focus Areas</strong></p>
+<ul class="simple">
+<li><p>Functionality: Does it work as intended?</p></li>
+<li><p>Maintainability: Is the code clean and well-structured?</p></li>
+<li><p>Testability: Is it easy to test?</p></li>
+<li><p>Security: Are there any security concerns?</p></li>
+<li><p>Performance: Are there any performance implications?</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="for-authors">
+<h3>For Authors<a class="headerlink" href="#for-authors" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Before Submitting</strong></p>
+<ul class="simple">
+<li><p>Make a branch and adhere to the naming convention: <code class="docutils literal notranslate"><span class="pre">yourname/issue</span></code></p></li>
+<li><p>Self-review your changes</p></li>
+<li><p>Run all tests locally</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> checks &amp; formatting!</p></li>
+<li><p>Update documentation!</p></li>
+<li><p>Keep changes focused and manageable – “MVP-R” what is the minimally viable PR – would you want to review it?</p></li>
+<li><p>Follow the project’s commit message conventions</p></li>
+</ul>
+</li>
+<li><p><strong>PR Description</strong></p>
+<ul class="simple">
+<li><p>Clear title describing the change</p></li>
+<li><p>Detailed description of changes</p></li>
+<li><p>Link to related issues</p></li>
+<li><p>Screenshots for UI changes</p></li>
+<li><p>Testing instructions</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="issue-management">
+<h2>Issue Management<a class="headerlink" href="#issue-management" title="Link to this heading">#</a></h2>
+<section id="creating-issues">
+<h3>Creating Issues<a class="headerlink" href="#creating-issues" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Issue Template</strong></p>
+<ul class="simple">
+<li><p>Use the provided issue templates</p></li>
+<li><p>Fill out all required sections</p></li>
+<li><p>Be specific and detailed</p></li>
+</ul>
+</li>
+<li><p><strong>Issue Types</strong></p>
+<ul class="simple">
+<li><p>Bug: Describe the current behavior and expected behavior</p></li>
+<li><p>Feature: Explain the use case and benefits</p></li>
+<li><p>Enhancement: Detail the improvement</p></li>
+<li><p>Documentation: Specify what needs to be updated</p></li>
+</ul>
+</li>
+<li><p><strong>Issue Content</strong></p>
+<ul class="simple">
+<li><p>Clear, descriptive title</p></li>
+<li><p>Detailed description</p></li>
+<li><p>Steps to reproduce (for bugs)</p></li>
+<li><p>Expected vs actual behavior</p></li>
+<li><p>Environment details</p></li>
+<li><p>Screenshots/videos when relevant</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="managing-issues">
+<h3>Managing Issues<a class="headerlink" href="#managing-issues" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Labels</strong></p>
+<ul class="simple">
+<li><p>Use appropriate labels (bug, enhancement, etc.)</p></li>
+<li><p>Priority labels when necessary</p></li>
+<li><p>Component/area labels</p></li>
+</ul>
+</li>
+<li><p><strong>Assignments</strong></p>
+<ul class="simple">
+<li><p>Assign issues to specific team members</p></li>
+<li><p>Set realistic deadlines</p></li>
+<li><p>Update status regularly</p></li>
+</ul>
+</li>
+<li><p><strong>Communication</strong></p>
+<ul class="simple">
+<li><p>Keep discussions in the issue thread</p></li>
+<li><p>Tag relevant team members</p></li>
+<li><p>Update issue status promptly</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="collaborative-coding-guidelines">
+<h2>Collaborative Coding Guidelines<a class="headerlink" href="#collaborative-coding-guidelines" title="Link to this heading">#</a></h2>
+<p>Each project is different, so please check project-specific guidelines.
+However, below is a guide for collaborative projects in general.
+I recommend the following system for within-lab projects that have different levels of maintainers &amp; builders.</p>
+<section id="who-is-developing">
+<h3>Who is developing?<a class="headerlink" href="#who-is-developing" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Organize weekly dev meetings</strong></p>
+<ul class="simple">
+<li><p>Review the current issues, PRs, and major milestones.</p></li>
+<li><p>Self-assessment: are you blocking anyone? If so, work to fix that.</p></li>
+<li><p>No one person is the gate-keeper for the project: work together</p></li>
+</ul>
+</li>
+<li><p><strong>Get a review assignment system in place</strong></p>
+<ul class="simple">
+<li><p>🟥 Make a flag for <strong>major dev/changes</strong>: all users of the code should agree and sign off (git reviews), and this includes the PI.</p></li>
+<li><p>🟧 Make a flag for <strong>user-needs</strong>: this is needed to stop a block – it might not be perfect, so make an issue to revisit later. 1 sign off from another user, and go! 🚀</p></li>
+<li><p>🟩 Make a flag for <strong>minor change</strong>: not breaking, can be changed later, 1 sign off okay</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="git-workflow">
+<h3>Git Workflow<a class="headerlink" href="#git-workflow" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Branching Strategy</strong></p>
+<ul class="simple">
+<li><p>Use feature branches for new work</p></li>
+<li><p>Branch naming convention: <code class="docutils literal notranslate"><span class="pre">name/issue-number-description</span></code></p>
+<ul>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">john/123-add-login-feature</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">sarah/456-fix-navigation-bug</span></code></p></li>
+</ul>
+</li>
+<li><p>Keep branches up to date with main</p></li>
+<li><p>Delete branches after merging</p></li>
+</ul>
+</li>
+<li><p><strong>Commits</strong></p>
+<ul class="simple">
+<li><p>Write clear, descriptive commit messages</p></li>
+<li><p>Keep commits focused and atomic</p></li>
+<li><p>Reference issue numbers in commits</p></li>
+<li><p>Follow conventional commits format</p></li>
+</ul>
+</li>
+<li><p><strong>Pull Requests</strong></p>
+<ul class="simple">
+<li><p>Keep PRs small and focused</p></li>
+<li><p>Update PR description as changes are made</p></li>
+<li><p>Request reviews from appropriate team members</p></li>
+<li><p>Address review comments promptly</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Team Communication</strong></p>
+<ul class="simple">
+<li><p>Use appropriate channels for different purposes - use basecamp campfire and github issues/PRs</p></li>
+<li><p>Be clear and concise</p></li>
+<li><p>Document important decisions!!</p></li>
+<li><p>Share knowledge and learnings</p></li>
+</ul>
+</li>
+<li><p><strong>Code Documentation</strong></p>
+<ul class="simple">
+<li><p>Document complex logic in the code with comments!</p></li>
+<li><p>Keep README up to date</p></li>
+<li><p>Add inline comments when necessary</p></li>
+<li><p>Document API changes</p></li>
+</ul>
+</li>
+<li><p><strong>Knowledge Sharing</strong></p>
+<ul class="simple">
+<li><p>Share learnings with the team</p></li>
+<li><p>Document common patterns</p></li>
+<li><p>Create and maintain team documentation</p></li>
+<li><p>Regular team sync-ups, organize them!</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="development-environment">
+<h3>Development Environment<a class="headerlink" href="#development-environment" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Setup</strong></p>
+<ul class="simple">
+<li><p>Document environment setup</p></li>
+<li><p>Use consistent development tools</p></li>
+<li><p>Share configuration/docker files</p></li>
+<li><p>Maintain development dependencies</p></li>
+</ul>
+</li>
+<li><p><strong>Local Development</strong></p>
+<ul class="simple">
+<li><p>Follow our development guidelines</p></li>
+<li><p>Use consistent formatting tools</p></li>
+<li><p>Run tests before committing (see <code class="docutils literal notranslate"><span class="pre">pre-commits</span></code>)</p></li>
+<li><p>Keep dependencies updated</p></li>
+</ul>
+</li>
+<li><p><strong>Code Quality</strong></p>
+<ul class="simple">
+<li><p>Use our suggeested linters and formatters</p></li>
+<li><p>Follow our style guides</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="code-formatting">
+<h2>Code Formatting<a class="headerlink" href="#code-formatting" title="Link to this heading">#</a></h2>
+<section id="general-formatting-rules">
+<h3>General Formatting Rules<a class="headerlink" href="#general-formatting-rules" title="Link to this heading">#</a></h3>
+<p>We use the Google Style Guide: <a class="reference external" href="https://google.github.io/styleguide/">https://google.github.io/styleguide/</a></p>
+<ol class="arabic simple">
+<li><p><strong>Indentation</strong></p>
+<ul class="simple">
+<li><p>Use 2 spaces for indentation</p></li>
+<li><p>No tabs</p></li>
+<li><p>Maximum indentation level: 4 levels</p></li>
+<li><p>Align with opening delimiter</p></li>
+</ul>
+</li>
+<li><p><strong>Line Length</strong></p>
+<ul class="simple">
+<li><p>Maximum line length: 100 characters</p></li>
+<li><p>Break long lines at logical points</p></li>
+<li><p>Indent continuation lines by 4 spaces</p></li>
+<li><p>Break after operators, not before</p></li>
+</ul>
+</li>
+<li><p><strong>Whitespace</strong></p>
+<ul class="simple">
+<li><p>No trailing whitespace</p></li>
+<li><p>One blank line between functions/classes</p></li>
+<li><p>Two blank lines between major sections</p></li>
+<li><p>No multiple consecutive blank lines</p></li>
+<li><p>Spaces around operators</p></li>
+<li><p>No spaces inside parentheses</p></li>
+<li><p>Spaces after commas and semicolons</p></li>
+</ul>
+</li>
+<li><p><strong>Naming Conventions</strong></p>
+<ul class="simple">
+<li><p>Variables: <code class="docutils literal notranslate"><span class="pre">lower_snake_case</span></code></p></li>
+<li><p>Functions: <code class="docutils literal notranslate"><span class="pre">lower_snake_case</span></code></p></li>
+<li><p>Classes: <code class="docutils literal notranslate"><span class="pre">PascalCase</span></code></p></li>
+<li><p>onstants: <code class="docutils literal notranslate"><span class="pre">UPPER_SNAKE_CASE</span></code></p></li>
+<li><p>Files: <code class="docutils literal notranslate"><span class="pre">lower_snake_case.py</span></code></p></li>
+<li><p>Private members: <code class="docutils literal notranslate"><span class="pre">_single_leading_underscore</span></code></p></li>
+<li><p>Modules/Packages: <code class="docutils literal notranslate"><span class="pre">lower_snake_case</span></code></p></li>
+<li><p>Interfaces: <code class="docutils literal notranslate"><span class="pre">PascalCase</span></code> (same as classes, no special prefix)</p></li>
+</ul>
+</li>
+<li><p><strong>Comments</strong></p>
+<ul class="simple">
+<li><p>Use clear, concise comments</p></li>
+<li><p>Comment complex logic</p></li>
+<li><p>Keep comments up to date</p></li>
+<li><p>Remove commented-out code</p></li>
+</ul>
+</li>
+<li><p><strong>Imports/Exports</strong></p>
+<ul class="simple">
+<li><p>Group imports in the following order:</p>
+<ol class="arabic simple">
+<li><p>Third-party imports</p></li>
+<li><p>Project imports</p></li>
+</ol>
+</li>
+<li><p>Sort imports by <code class="docutils literal notranslate"><span class="pre">isort</span></code> within the groups</p></li>
+<li><p>Use named exports</p></li>
+<li><p>Avoid default exports</p></li>
+<li><p>One import per line</p></li>
+</ul>
+</li>
+<li><p><strong>Code Organization</strong></p>
+<ul class="simple">
+<li><p>One class/component per file</p></li>
+<li><p>Group related functionality</p></li>
+<li><p>Keep files focused and manageable</p></li>
+<li><p>Follow the project’s file structure</p></li>
+<li><p>RECOMMENDED: Maximum file length: 1000 lines</p></li>
+<li><p>RECOMMENDED: Maximum function length: 50 lines</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="automated-formatting">
+<h3>Automated Formatting<a class="headerlink" href="#automated-formatting" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Pre-commit Hooks</strong></p>
+<ul class="simple">
+<li><p>Run formatters before commit</p></li>
+<li><p>Run linters before commit</p></li>
+<li><p>Check for common issues</p></li>
+<li><p>Ensure consistent formatting</p></li>
+<li><p>Block commits with formatting errors</p></li>
+</ul>
+</li>
+<li><p><strong>CI/CD Integration</strong></p>
+<ul class="simple">
+<li><p>Run formatting checks in pipeline</p></li>
+<li><p>Fail builds on formatting errors</p></li>
+<li><p>Generate formatting reports</p></li>
+<li><p>Enforce style guide compliance</p></li>
+<li><p>Use Google’s style guide linters</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="google-style-guide-compliance">
+<h3>Google Style Guide Compliance<a class="headerlink" href="#google-style-guide-compliance" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>General Principles</strong></p>
+<ul class="simple">
+<li><p>Be consistent with existing code</p></li>
+<li><p>Be consistent with Google’s style guide</p></li>
+<li><p>Use Google’s official linters</p></li>
+<li><p>Follow language-specific style guides</p></li>
+<li><p>Document any style guide exceptions</p></li>
+</ul>
+</li>
+<li><p><strong>Code Review Requirements</strong></p>
+<ul class="simple">
+<li><p>Check style guide compliance</p></li>
+<li><p>Verify formatting is correct</p></li>
+<li><p>Ensure consistent naming</p></li>
+<li><p>Validate documentation</p></li>
+<li><p>Review for best practices</p></li>
+</ul>
+</li>
+<li><p><strong>Style Guide Resources</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a></p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p>Remember: These guidelines are living documents. Feel free to suggest improvements and updates as the team evolves and learns.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code &amp; Data Guidelines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Learning_resources.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Learning Resources</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review-best-practices">Code Review Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-reviewers">For Reviewers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-authors">For Authors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issue-management">Issue Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-issues">Creating Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-issues">Managing Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborative-coding-guidelines">Collaborative Coding Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-developing">Who is developing?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatting">Code Formatting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formatting-rules">General Formatting Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-formatting">Automated Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-style-guide-compliance">Google Style Guide Compliance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By MWM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
