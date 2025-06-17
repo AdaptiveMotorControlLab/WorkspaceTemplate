@@ -1,8 +1,8 @@
 format: jb-book
-root: README
+root: docs/StyleGuide 
 parts:
 - caption: Main Documentation
   chapters:
-  - file: docs/StyleGuide
+  - file: README
   - file: docs/HowTo_JupyterBook
   - file: docs/Learning_reseources
