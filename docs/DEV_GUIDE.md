@@ -96,6 +96,21 @@
 
 ## Collaborative Coding Guidelines
 
+Each project is different, so please check project-specific guidelines. 
+However, below is a guide for collaborative projects in general.
+I recommend the following system for within-lab projects that have different levels of maintainers & builders.
+
+### Who is developing?
+
+1. **Organize weekly dev meetings**
+   - Review the current issues, PRs, and major milestones.
+   - Self-assessment: are you blocking anyone? If so, work to fix that.
+   - No one person is the gate-keeper for the project: work together
+2. **Get a review assigment system in place**
+   - 🟥 Make a flag for **major dev/changes**: all users of the code should agree and sign off (git reviews), and this includes the PI.
+   - 🟧 Make a flag for **user-needs**: this is needed to stop a block -- it might not be perfect, so make an issue to revist later. 1 sign off from another user, and go! 🚀 
+   - 🟩 Make a flag for **minor change**: not breaking, can be changed later, 1 sign off okay
+
 ### Git Workflow
 
 1. **Branching Strategy**
