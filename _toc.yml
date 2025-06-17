@@ -3,5 +3,6 @@ root: README
 parts:
 - caption: Main Documentation
   chapters:
+  - file: docs/StyleGuide
   - file: docs/HowTo_JupyterBook
   - file: docs/Learning_reseources
