@@ -40,5 +40,3 @@ To then deploy the book live, see: https://jupyterbook.org/en/stable/publish/gh-
 In short, Go to Settings > Pages and set up anaction to deploy to a new branch (that you never merge) called `gh-pages`:
 
 ![Screen Shot 2025-06-17 at 2 20 19 PM](https://github.com/user-attachments/assets/17d13802-6543-4859-ac09-7abbd491277d)
-
-

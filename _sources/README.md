@@ -57,7 +57,7 @@ project_name/
 
    * Formatted code makes your life and those who use/review your code easier. Standardized formatting with tools like `black` and `isort` (see the provided `.pre-commit-config.yaml`).
    * [Pre-commit hooks](https://pre-commit.com/) to automate checks before pushing code! Follow their quick Guide to do this, but in short:
-   
+
    (1) install it in your dev env
    ```python
       pip install pre-commit
@@ -85,12 +85,12 @@ project_name/
 
    * [DataJoint](https://www.datajoint.com/) examples for managing and querying scientific data pipelines - these are a must; use minimally for data + meta data storage, and use it to automate things you do daily (preprocessing, running DeepLabCut, etc!)
    * [Templates for common workflows and schema management are here!](https://docs.datajoint.com/elements/)
-  
+
 
 7. **Style Guide for overall code & project management**
 
    * Tips and practices for code, manuscripts, and figures.
-   
+
 
 ---
 
