@@ -5,7 +5,7 @@
 
 Please see our overall guide on code & project formatting [here](https://github.com/AdaptiveMotorControlLab/WorkspaceTemplate/blob/main/README.md).
 
-### Main Principles 🔨 Organize your code & data: 
+### Main Principles 🔨 Organize your code & data:
 - For experimental and ML projects, please use [DataJoint/databases](https://www.datajoint.com/)
 - Be sure you work under a lab repo, typically called "https://github.com/AdaptiveMotorControlLab/YourName_workspace".
 - For larger projects (DLC, CEBRA, ExperimentalPipelines, you should be sure your "final" work gets into a pipeline; talk to Mackenzie about this)
@@ -19,7 +19,7 @@ Please see our overall guide on code & project formatting [here](https://github.
 
 
 
-## Ready to write up your work and share your hard work, data, & code? 
+## Ready to write up your work and share your hard work, data, & code?
 Here is how to do so most efficiently with me.
 
 - 🚨 First, I recommend having a one-on-one so we can lay out the paper sketch, authors, data and code sharing plan together if not already done.
@@ -92,10 +92,10 @@ ax.xaxis.label.set_color("white")
 ```
 
 
-### Timeline Major Point: 
+### Timeline Major Point:
 
-For conference submissions, all papers must be in final form 1 week prior to the deadline. 
-There will be no exceptions going forward. 
-This gives us needed time to reflect, refine writing, get some distance, and ask colleagues for feedback. 
-It also gives us time to prepare the code submission, and potentially arXiv the work -- which is always preferred. 
-We should not be submitting manuscripts to conferences we would not want publicly read! 
+For conference submissions, all papers must be in final form 1 week prior to the deadline.
+There will be no exceptions going forward.
+This gives us needed time to reflect, refine writing, get some distance, and ask colleagues for feedback.
+It also gives us time to prepare the code submission, and potentially arXiv the work -- which is always preferred.
+We should not be submitting manuscripts to conferences we would not want publicly read!

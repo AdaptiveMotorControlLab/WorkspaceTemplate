@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+cebra
+pytest
+pytest-cov
+isort
+yapf

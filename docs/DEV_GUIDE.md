@@ -13,7 +13,7 @@
 1. **Be Constructive and Respectful**
    - Focus on the code, not the person 🔐
    - Provide clear, actionable feedback 🚧
-   - Explain the "why" behind your suggestions 
+   - Explain the "why" behind your suggestions
    - Use a positive and encouraging tone 💜
 
 2. **Review Checklist**
@@ -96,7 +96,7 @@
 
 ## Collaborative Coding Guidelines
 
-Each project is different, so please check project-specific guidelines. 
+Each project is different, so please check project-specific guidelines.
 However, below is a guide for collaborative projects in general.
 I recommend the following system for within-lab projects that have different levels of maintainers & builders.
 
@@ -108,7 +108,7 @@ I recommend the following system for within-lab projects that have different lev
    - No one person is the gate-keeper for the project: work together
 2. **Get a review assignment system in place**
    - 🟥 Make a flag for **major dev/changes**: all users of the code should agree and sign off (git reviews), and this includes the PI.
-   - 🟧 Make a flag for **user-needs**: this is needed to stop a block -- it might not be perfect, so make an issue to revisit later. 1 sign off from another user, and go! 🚀 
+   - 🟧 Make a flag for **user-needs**: this is needed to stop a block -- it might not be perfect, so make an issue to revisit later. 1 sign off from another user, and go! 🚀
    - 🟩 Make a flag for **minor change**: not breaking, can be changed later, 1 sign off okay
 
 ### Git Workflow
@@ -137,7 +137,7 @@ I recommend the following system for within-lab projects that have different lev
 
 1. **Team Communication**
    - Use appropriate channels for different purposes - use basecamp campfire and github issues/PRs
-   - Be clear and concise 
+   - Be clear and concise
    - Document important decisions!!
    - Share knowledge and learnings
 
@@ -200,13 +200,13 @@ We use the Google Style Guide: https://google.github.io/styleguide/
    - Spaces after commas and semicolons
 
 4. **Naming Conventions**
-   - Variables: `lower_snake_case`  
-   - Functions: `lower_snake_case`  
-   - Classes: `PascalCase`  
-   - onstants: `UPPER_SNAKE_CASE`  
-   - Files: `lower_snake_case.py`  
-   - Private members: `_single_leading_underscore`  
-   - Modules/Packages: `lower_snake_case`  
+   - Variables: `lower_snake_case`
+   - Functions: `lower_snake_case`
+   - Classes: `PascalCase`
+   - onstants: `UPPER_SNAKE_CASE`
+   - Files: `lower_snake_case.py`
+   - Private members: `_single_leading_underscore`
+   - Modules/Packages: `lower_snake_case`
    - Interfaces: `PascalCase` (same as classes, no special prefix)
 
 5. **Comments**
@@ -270,4 +270,4 @@ We use the Google Style Guide: https://google.github.io/styleguide/
 
 ---
 
-Remember: These guidelines are living documents. Feel free to suggest improvements and updates as the team evolves and learns. 
+Remember: These guidelines are living documents. Feel free to suggest improvements and updates as the team evolves and learns.
